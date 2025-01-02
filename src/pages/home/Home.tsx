@@ -1,9 +1,15 @@
+import React from 'react';
+import { Container, Typography, Box, List, ListItem, ListItemText, Link, Avatar, Grid, Paper } from '@mui/material';
 
 
-function Home() {
-    return <div>
-        This is home
-    </div>
+export default function Home() {
+    return (
+        <Container>
+            <Box>
+                <Typography variant="h3" component="p" gutterBottom>
+                    Hi.
+                </Typography>
+            </Box>
+        </Container>
+    );
 }
-
-export default Home;
