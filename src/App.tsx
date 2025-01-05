@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -22,14 +22,21 @@ function App() {
       : "light";
   });
 
-  const theme = createTheme({
-    palette: {
-      mode:
-        userSelectedTheme === "system"
-          ? (systemTheme as PaletteMode)
-          : (userSelectedTheme as PaletteMode),
-    },
-  });
+  const activeTheme = useMemo(() => {
+    return userSelectedTheme === "system"
+      ? (systemTheme as PaletteMode)
+      : (userSelectedTheme as PaletteMode);
+  }, [userSelectedTheme, systemTheme]);
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: activeTheme,
+        },
+      }),
+    [activeTheme]
+  );
 
   useEffect(() => {
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {
@@ -49,6 +56,10 @@ function App() {
     localStorage.setItem("theme", theme);
   };
 
+  useEffect(() => {
+    document.body.className = activeTheme;
+  }, [activeTheme]);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -56,7 +67,13 @@ function App() {
           currentTheme={userSelectedTheme}
           handleThemeChange={handleThemeChange}
         />
-        <Box sx={{ marginTop: "16px" }}>
+        <Box
+          sx={{
+            paddingTop: "16px",
+            bgcolor: "background.default",
+            color: "text.primary",
+          }}
+        >
           <Routes>
             {SiteRoutes.map((siteRoute) => (
               <Route
