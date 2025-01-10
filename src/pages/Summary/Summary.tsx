@@ -1,49 +1,64 @@
 import React from "react";
 import {
-  Container,
   Typography,
   Box,
   List,
   ListItem,
   ListItemText,
   Avatar,
+  Container,
+  Divider,
 } from "@mui/material";
+import EducationList from "components/EducationList/EducationList";
+import EducationEntry from "components/EducationList/EducationListEntry/EducationEntry";
 
 export default function Summary() {
   return (
-    <Container>
-      <Box textAlign="center" my={4}>
+    <Container maxWidth="md">
+      <Box>
         <Avatar
           alt="Marko Gregurović"
           src="/avatar.jpg"
-          sx={{ width: 200, height: 200, margin: "auto" }}
+          sx={{ width: 200, height: 200, margin: "auto", marginBottom: "16px" }}
         />
-        <Typography variant="h2" component="h1" gutterBottom>
+        {/* <Typography variant="h2" gutterBottom>
           Welcome to My Portfolio
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Hi, I&apos;m Marko Gregurović, a passionate software engineer based in
-          Zagreb, Croatia.
-        </Typography>
+        </Typography> */}
       </Box>
-      <Box my={4}>
-        <Typography variant="h4" component="h2" gutterBottom>
-          Education
+
+      <Box sx={{ width: "100%", height: "32px" }} />
+      <Divider />
+      <Box sx={{ width: "100%", height: "16px" }} />
+
+      {/* <Box>
+        <Typography variant="h4" gutterBottom>
+          Professional Experience
         </Typography>
-        <List>
-          <ListItem>
-            <ListItemText
-              primary="Master's Degree in Computer Science"
-              secondary="University of Zagreb, 2022"
-            />
-          </ListItem>
-          {/* Add more education entries if needed */}
-        </List>
-      </Box>
-      <Box my={4}>
+        <List></List>
+      </Box> */}
+
+      <EducationList>
+        <EducationEntry
+          title="Master of Science in Computing"
+          university="University of Zagreb"
+          faculty="Faculty of Electrical Engineering and Computing"
+          period="October 2021 - July 2023"
+        />
+        <EducationEntry
+          title="Bachelor of Science in Computing"
+          university="University of Zagreb"
+          faculty="Faculty of Electrical Engineering and Computing"
+          period="October 2018 - July 2021"
+        />
+      </EducationList>
+      <Box>
+        <Box sx={{ width: "100%", height: "32px" }} />
+        <Divider />
+        <Box sx={{ width: "100%", height: "16px" }} />
         <Typography variant="h4" component="h2" gutterBottom>
           Work Experience
         </Typography>
+        <Divider />
         <List>
           <ListItem>
             <ListItemText
