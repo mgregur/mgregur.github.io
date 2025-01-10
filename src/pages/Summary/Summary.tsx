@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Avatar, Container, Divider } from "@mui/material";
+import { Box, Avatar, Container, Divider, Typography } from "@mui/material";
 import EducationList from "components/EducationList/EducationList";
 import EducationEntry from "components/EducationList/EducationListEntry/EducationEntry";
 import ExperienceList from "components/ExperienceList/ExperienceList";
@@ -9,9 +9,9 @@ import { EducationData, ExperienceData } from "./PageData";
 function HeaderDivider() {
   return (
     <React.Fragment>
-      <Box sx={{ width: "100%", height: "32px" }} />
-      <Divider />
       <Box sx={{ width: "100%", height: "16px" }} />
+      <Divider />
+      <Box sx={{ width: "100%", height: "32px" }} />
     </React.Fragment>
   );
 }
@@ -19,12 +19,16 @@ function HeaderDivider() {
 export default function Summary() {
   return (
     <Container maxWidth="md">
-      <Box>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
         <Avatar
           alt="Marko Gregurović"
           src="/avatar.jpg"
           sx={{ width: 200, height: 200, margin: "auto", marginBottom: "16px" }}
         />
+        <Typography variant="h3">Software Engineer</Typography>
+        <Typography variant="h5">Marko Gregurović</Typography>
       </Box>
 
       <HeaderDivider />
