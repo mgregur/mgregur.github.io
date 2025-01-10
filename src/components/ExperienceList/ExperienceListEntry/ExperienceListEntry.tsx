@@ -35,18 +35,19 @@ export default function ExperienceEntry({
             </React.Fragment>
           }
         />
-        <ListItemText
-          sx={{ display: "flex", flexDirection: "row-reverse" }}
-          primary={
-            <Typography
-              sx={{ color: "text.secondary" }}
-              component={"span"}
-              variant="body2"
-            >
-              {period}
-            </Typography>
-          }
-        />
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <ListItemText
+            primary={
+              <Typography
+                sx={{ color: "text.secondary" }}
+                component={"span"}
+                variant="body2"
+              >
+                {period}
+              </Typography>
+            }
+          />
+        </Box>
       </Box>
       <List
         sx={{ listStyleType: "disc", marginLeft: "30px" }}

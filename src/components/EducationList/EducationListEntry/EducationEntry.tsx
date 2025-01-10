@@ -25,7 +25,7 @@ export default function EducationEntry({
       <ListItemText
         primary={<Typography variant="h6">{title}</Typography>}
         secondary={
-          <React.Fragment>
+          <>
             {university && (
               <Typography component="span" variant="body2" display="block">
                 {university}
@@ -36,7 +36,7 @@ export default function EducationEntry({
                 {faculty}
               </Typography>
             )}
-          </React.Fragment>
+          </>
         }
       />
       <Box sx={{ display: "flex", alignItems: "center" }}>
