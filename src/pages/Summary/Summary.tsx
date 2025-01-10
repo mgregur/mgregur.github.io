@@ -1,16 +1,20 @@
 import React from "react";
-import {
-  Typography,
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Avatar,
-  Container,
-  Divider,
-} from "@mui/material";
+import { Box, Avatar, Container, Divider } from "@mui/material";
 import EducationList from "components/EducationList/EducationList";
 import EducationEntry from "components/EducationList/EducationListEntry/EducationEntry";
+import ExperienceList from "components/ExperienceList/ExperienceList";
+import ExperienceEntry from "components/ExperienceList/ExperienceListEntry/ExperienceListEntry";
+import { EducationData, ExperienceData } from "./PageData";
+
+function HeaderDivider() {
+  return (
+    <React.Fragment>
+      <Box sx={{ width: "100%", height: "32px" }} />
+      <Divider />
+      <Box sx={{ width: "100%", height: "16px" }} />
+    </React.Fragment>
+  );
+}
 
 export default function Summary() {
   return (
@@ -21,67 +25,23 @@ export default function Summary() {
           src="/avatar.jpg"
           sx={{ width: 200, height: 200, margin: "auto", marginBottom: "16px" }}
         />
-        {/* <Typography variant="h2" gutterBottom>
-          Welcome to My Portfolio
-        </Typography> */}
       </Box>
 
-      <Box sx={{ width: "100%", height: "32px" }} />
-      <Divider />
-      <Box sx={{ width: "100%", height: "16px" }} />
+      <HeaderDivider />
 
-      {/* <Box>
-        <Typography variant="h4" gutterBottom>
-          Professional Experience
-        </Typography>
-        <List></List>
-      </Box> */}
+      <ExperienceList>
+        {ExperienceData.map((expData, index) => (
+          <ExperienceEntry key={index + "-experience"} {...expData} />
+        ))}
+      </ExperienceList>
+
+      <HeaderDivider />
 
       <EducationList>
-        <EducationEntry
-          title="Master of Science in Computing"
-          university="University of Zagreb"
-          faculty="Faculty of Electrical Engineering and Computing"
-          period="October 2021 - July 2023"
-        />
-        <EducationEntry
-          title="Bachelor of Science in Computing"
-          university="University of Zagreb"
-          faculty="Faculty of Electrical Engineering and Computing"
-          period="October 2018 - July 2021"
-        />
+        {EducationData.map((ed, index) => (
+          <EducationEntry key={index + "-education"} {...ed} />
+        ))}
       </EducationList>
-      <Box>
-        <Box sx={{ width: "100%", height: "32px" }} />
-        <Divider />
-        <Box sx={{ width: "100%", height: "16px" }} />
-        <Typography variant="h4" component="h2" gutterBottom>
-          Work Experience
-        </Typography>
-        <Divider />
-        <List>
-          <ListItem>
-            <ListItemText
-              primary="Software Engineer"
-              secondary={
-                <>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="textPrimary"
-                  >
-                    Minus5, 2022 - Present
-                  </Typography>
-                  <Typography component="span">
-                    Description of your role and responsibilities at Minus5.
-                  </Typography>
-                </>
-              }
-            />
-          </ListItem>
-          {/* Add more work experience entries if needed */}
-        </List>
-      </Box>
     </Container>
   );
 }
