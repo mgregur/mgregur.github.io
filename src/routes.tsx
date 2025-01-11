@@ -1,4 +1,3 @@
-import Education from "pages/Education/Education";
 import Summary from "pages/Summary/Summary";
 import NotFound from "pages/NotFound/NotFound";
 import React from "react";
@@ -15,12 +14,6 @@ export const SiteRoutes: SiteRoute[] = [
     path: "/",
     siteElement: <Summary />,
     label: "Summary",
-    showInNavigation: true,
-  },
-  {
-    path: "/education",
-    siteElement: <Education />,
-    label: "Education",
     showInNavigation: true,
   },
   {

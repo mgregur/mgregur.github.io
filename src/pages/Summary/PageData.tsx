@@ -1,22 +1,73 @@
 import { EducationEntryProps } from "components/EducationList/EducationListEntry/EducationEntry";
 import { ExperienceEntryProps } from "components/ExperienceList/ExperienceListEntry/ExperienceListEntry";
 
-export const EducationData: EducationEntryProps[] = [
+export const SummaryEducationData: EducationEntryProps[] = [
   {
     title: "Master of Science in Computing",
     university: "University of Zagreb",
     faculty: "Faculty of Electrical Engineering and Computing",
     period: "October 2021 - July 2023",
+    courses: [
+      {
+        name: "Advanced Algorithms and Data Structures",
+        grade: 3,
+      },
+      {
+        name: "Advanced Databases",
+        grade: 3,
+      },
+      {
+        name: "Advanced Operating Systems",
+        grade: 3,
+      },
+      {
+        name: "Advanced Web Development",
+        grade: 4,
+      },
+      {
+        name: "Concurrent Programming",
+        grade: 5,
+      },
+      {
+        name: "Database Systems",
+        grade: 4,
+      },
+      {
+        name: "Distributed Big Data Processing",
+        grade: 4,
+      },
+      {
+        name: "Distributed Ledgers and Cryptocurrencies",
+        grade: 4,
+      },
+      {
+        name: "Distributed Systems",
+        grade: 4,
+      },
+      {
+        name: "Information Systems",
+        grade: 4,
+      },
+      {
+        name: "Operating Systems and Applications Security",
+        grade: 5,
+      },
+      {
+        name: "Social networks",
+        grade: 5,
+      },
+    ],
   },
   {
     title: "Bachelor of Science in Computing",
     university: "University of Zagreb",
     faculty: "Faculty of Electrical Engineering and Computing",
     period: "October 2018 - July 2021",
+    courses: [],
   },
 ];
 
-export const ExperienceData: ExperienceEntryProps[] = [
+export const SummaryExperienceData: ExperienceEntryProps[] = [
   {
     company: "minus5 d.o.o.",
     role: "Backend software engineer",

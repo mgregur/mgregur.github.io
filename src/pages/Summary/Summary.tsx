@@ -4,7 +4,7 @@ import EducationList from "components/EducationList/EducationList";
 import EducationEntry from "components/EducationList/EducationListEntry/EducationEntry";
 import ExperienceList from "components/ExperienceList/ExperienceList";
 import ExperienceEntry from "components/ExperienceList/ExperienceListEntry/ExperienceListEntry";
-import { EducationData, ExperienceData } from "./PageData";
+import { SummaryEducationData, SummaryExperienceData } from "./PageData";
 
 function HeaderDivider() {
   return (
@@ -34,7 +34,7 @@ export default function Summary() {
       <HeaderDivider />
 
       <ExperienceList>
-        {ExperienceData.map((expData, index) => (
+        {SummaryExperienceData.map((expData, index) => (
           <ExperienceEntry key={index + "-experience"} {...expData} />
         ))}
       </ExperienceList>
@@ -42,7 +42,7 @@ export default function Summary() {
       <HeaderDivider />
 
       <EducationList>
-        {EducationData.map((ed, index) => (
+        {SummaryEducationData.map((ed, index) => (
           <EducationEntry key={index + "-education"} {...ed} />
         ))}
       </EducationList>
