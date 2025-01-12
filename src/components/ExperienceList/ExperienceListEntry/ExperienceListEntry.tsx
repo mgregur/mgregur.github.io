@@ -50,7 +50,7 @@ export default function ExperienceEntry({
         </Box>
       </Box>
       <List
-        sx={{ listStyleType: "disc", marginLeft: "30px" }}
+        sx={{ listStyleType: "disc", marginLeft: "30px", width: "100%", pl: 2 }}
         dense
         disablePadding
       >

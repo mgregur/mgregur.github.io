@@ -10,51 +10,39 @@ export const SummaryEducationData: EducationEntryProps[] = [
     courses: [
       {
         name: "Advanced Algorithms and Data Structures",
-        grade: 3,
       },
       {
         name: "Advanced Databases",
-        grade: 3,
       },
       {
         name: "Advanced Operating Systems",
-        grade: 3,
       },
       {
         name: "Advanced Web Development",
-        grade: 4,
       },
       {
         name: "Concurrent Programming",
-        grade: 5,
       },
       {
         name: "Database Systems",
-        grade: 4,
       },
       {
         name: "Distributed Big Data Processing",
-        grade: 4,
       },
       {
         name: "Distributed Ledgers and Cryptocurrencies",
-        grade: 4,
       },
       {
         name: "Distributed Systems",
-        grade: 4,
       },
       {
         name: "Information Systems",
-        grade: 4,
       },
       {
         name: "Operating Systems and Applications Security",
-        grade: 5,
       },
       {
         name: "Social networks",
-        grade: 5,
       },
     ],
   },
@@ -63,7 +51,53 @@ export const SummaryEducationData: EducationEntryProps[] = [
     university: "University of Zagreb",
     faculty: "Faculty of Electrical Engineering and Computing",
     period: "October 2018 - July 2021",
-    courses: [],
+    courses: [
+      {
+        name: "Algorithms and data structures",
+      },
+      {
+        name: "Computer Security",
+      },
+      {
+        name: "Databases",
+      },
+      {
+        name: "Design Patterns",
+      },
+      {
+        name: "Development of Software Applications",
+      },
+      {
+        name: "Development of software support for web and mobile devices",
+      },
+      {
+        name: "Introduction to Artificial Intelligence",
+      },
+      {
+        name: "Introduction to Theoretical Computer Science",
+      },
+      {
+        name: "Object-oriented programming",
+      },
+      {
+        name: "Operating Systems",
+      },
+      {
+        name: "Programming Language Translation",
+      },
+      {
+        name: "Scripting Languages",
+      },
+      {
+        name: "Selected Topics in Software Development",
+      },
+      {
+        name: "Software engineering",
+      },
+      {
+        name: "Theory of information",
+      },
+    ],
   },
 ];
 
@@ -89,8 +123,7 @@ export const SummaryExperienceData: ExperienceEntryProps[] = [
     bullets: [
       "Developed a Kubernetes operator for controlling Harbor docker registry from an OpenShift cluster.",
       "Wrote Go CLI for generating GitLab CI/CD configuration in a monorepo.",
-      "Contributed as a member of an agile team focused on the development and",
-      "maintenance of enterprise Java+React banking systems.",
+      "Contributed as a member of an agile team focused on the development and maintenance of enterprise Java+React banking systems.",
     ],
   },
 ];

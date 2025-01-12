@@ -2,21 +2,21 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
-import NavigationDropdown from "components/NavigationDropdown/NavigationDropdown";
+import NavbarMenu from "components/Navbar/NavbarMenu/NavbarMenu";
 
-interface HeaderProps {
+interface NavbarProps {
   currentTheme: string;
   handleThemeChange: (theme: string) => void;
 }
 
-export default function Header({
+export default function Navbar({
   currentTheme,
   handleThemeChange,
-}: HeaderProps) {
+}: NavbarProps) {
   return (
     <AppBar position="static" color="default">
       <Toolbar>
-        <NavigationDropdown />
+        <NavbarMenu />
         <Box
           sx={{ display: "flex", flexDirection: "row-reverse", width: "100%" }}
         >

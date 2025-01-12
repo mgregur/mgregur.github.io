@@ -5,10 +5,10 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Header from "components/Header/Header";
+import Navbar from "components/Navbar/Navbar";
 import { PaletteMode, ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
-import { SiteRoutes } from "routes";
+import { SiteRoutes, unpackRoutes } from "routes";
 
 function App() {
   const [userSelectedTheme, setUserSelectedTheme] = useState<string>(() => {
@@ -60,22 +60,24 @@ function App() {
     document.body.className = activeTheme;
   }, [activeTheme]);
 
+  const unpackedRoutes = useMemo(() => unpackRoutes(SiteRoutes), []);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header
+        <Navbar
           currentTheme={userSelectedTheme}
           handleThemeChange={handleThemeChange}
         />
         <Box
           sx={{
-            paddingTop: "16px",
+            paddingTop: 2,
             bgcolor: "background.default",
             color: "text.primary",
           }}
         >
           <Routes>
-            {SiteRoutes.map((siteRoute) => (
+            {unpackedRoutes.map((siteRoute) => (
               <Route
                 key={siteRoute.path}
                 path={siteRoute.path}
