@@ -4,7 +4,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route, HashRouter } from "react-router";
 import Navbar from "components/Navbar/Navbar";
 import { PaletteMode, ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
@@ -64,7 +64,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar
           currentTheme={userSelectedTheme}
           handleThemeChange={handleThemeChange}
@@ -86,7 +86,7 @@ function App() {
             ))}
           </Routes>
         </Box>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
