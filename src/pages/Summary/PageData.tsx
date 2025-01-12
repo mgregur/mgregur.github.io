@@ -21,6 +21,9 @@ export const SummaryEducationData: EducationEntryProps[] = [
         name: "Advanced Web Development",
       },
       {
+        name: "Analysis of Massive Datasets",
+      },
+      {
         name: "Concurrent Programming",
       },
       {

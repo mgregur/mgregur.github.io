@@ -67,6 +67,8 @@ export default function Perspectives() {
           <CardActions>
             <Button
               size="small"
+              variant="text"
+              color="inherit"
               onClick={() => navigate(PATHS.PER_EFFECTIVE_COMMUNICATION)}
             >
               More
