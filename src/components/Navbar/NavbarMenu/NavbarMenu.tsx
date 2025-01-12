@@ -43,7 +43,7 @@ export default function NavbarMenu() {
       sx={{
         display: "flex",
         alignItems: "center",
-        minWidth: useShortLabels ? "180px" : "300px",
+        minWidth: useShortLabels ? "180px" : "260px",
       }}
     >
       <IconButton
