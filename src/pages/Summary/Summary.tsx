@@ -9,7 +9,7 @@ import HeaderDivider from "components/HeaderDivider/HeaderDivider";
 
 export default function Summary() {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ pb: "50vh" }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
@@ -18,8 +18,12 @@ export default function Summary() {
           src="/avatar.jpg"
           sx={{ width: 200, height: 200, margin: "auto", marginBottom: 2 }}
         />
-        <Typography variant="h3">Software Engineer</Typography>
-        <Typography variant="h5">Marko Gregurović</Typography>
+        <Typography textAlign="center" variant="h3">
+          Software Engineer
+        </Typography>
+        <Typography textAlign="center" variant="h5">
+          Marko Gregurović
+        </Typography>
       </Box>
 
       <HeaderDivider />

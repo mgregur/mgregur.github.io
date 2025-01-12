@@ -4,7 +4,7 @@ import Disclaimer from "components/Disclaimer/Disclaimer";
 
 export default function EffectiveCommunication() {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ pb: "50vh" }}>
       <Disclaimer />
     </Container>
   );

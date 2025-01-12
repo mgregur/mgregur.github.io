@@ -18,7 +18,7 @@ export default function Perspectives() {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ pb: "50vh" }}>
       <Disclaimer />
 
       <HeaderDivider />
