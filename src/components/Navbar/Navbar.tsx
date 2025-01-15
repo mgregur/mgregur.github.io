@@ -1,7 +1,14 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Box,
+  Divider,
+} from "@mui/material";
 import NavbarMenu from "components/Navbar/NavbarMenu/NavbarMenu";
 
 interface NavbarProps {
@@ -14,7 +21,7 @@ export default function Navbar({
   handleThemeChange,
 }: NavbarProps) {
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="fixed" color="default" sx={{ boxShadow: "none" }}>
       <Toolbar>
         <NavbarMenu />
         <Box
@@ -35,6 +42,7 @@ export default function Navbar({
           </FormControl>
         </Box>
       </Toolbar>
+      <Divider />
     </AppBar>
   );
 }

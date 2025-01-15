@@ -6,10 +6,11 @@ import ExperienceList from "components/ExperienceList/ExperienceList";
 import ExperienceEntry from "components/ExperienceList/ExperienceListEntry/ExperienceListEntry";
 import { SummaryEducationData, SummaryExperienceData } from "./PageData";
 import HeaderDivider from "components/HeaderDivider/HeaderDivider";
+import { NAVBAR_OFFSET } from "consts";
 
 export default function Summary() {
   return (
-    <Container maxWidth="md" sx={{ pb: "50vh" }}>
+    <Container maxWidth="md" sx={{ pb: "50vh", pt: NAVBAR_OFFSET }}>
       <Box
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >

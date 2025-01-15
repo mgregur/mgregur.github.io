@@ -13,12 +13,14 @@ import Disclaimer from "components/Disclaimer/Disclaimer";
 import { useNavigate } from "react-router";
 import { PATHS } from "routes";
 import HeaderDivider from "components/HeaderDivider/HeaderDivider";
+import { PERSPECTIVES } from "pages/Perspectives/perspectivesData";
+import { NAVBAR_OFFSET } from "consts";
 
 export default function Perspectives() {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="md" sx={{ pb: "50vh" }}>
+    <Container maxWidth="md" sx={{ pb: "50vh", pt: NAVBAR_OFFSET }}>
       <Disclaimer />
 
       <HeaderDivider />
@@ -53,28 +55,28 @@ export default function Perspectives() {
           marginTop: 2,
         }}
       >
-        <Card elevation={3} sx={{ mx: 2 }}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Effective Communication in Software Development
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Differing communication styles impact team efficiency. Asking
-              “unnecessary” questions and challenging assumptions early can
-              prevent costly misunderstandings.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              size="small"
-              variant="text"
-              color="inherit"
-              onClick={() => navigate(PATHS.PER_EFFECTIVE_COMMUNICATION)}
-            >
-              More
-            </Button>
-          </CardActions>
-        </Card>
+        {PERSPECTIVES.map((data, index) => (
+          <Card elevation={3} key={index}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {data.cardTitle}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                {data.cardDescription}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                size="small"
+                variant="text"
+                color="inherit"
+                onClick={() => navigate(PATHS.PERSPECTIVES + data.subpath)}
+              >
+                More
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
       </Box>
     </Container>
   );

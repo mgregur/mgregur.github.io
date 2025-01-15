@@ -2,12 +2,15 @@ import Summary from "pages/Summary/Summary";
 import NotFound from "pages/NotFound/NotFound";
 import React from "react";
 import Perspectives from "pages/Perspectives/Perspectives";
-import EffectiveCommunication from "pages/Perspectives/Subsites/EffectiveCommunication/EffectiveCommunication";
+import Perspective from "pages/Perspective/Perspective";
+import {
+  PerspectiveData,
+  PERSPECTIVES,
+} from "pages/Perspectives/perspectivesData";
 
 export const PATHS = {
   HOME: "/",
   PERSPECTIVES: "/perspectives",
-  PER_EFFECTIVE_COMMUNICATION: "/perspectives/effective-communication",
 };
 
 export interface SiteRoute {
@@ -32,15 +35,7 @@ export const SiteRoutes: SiteRoute[] = [
     label: "My Perspectives",
     showInNavigation: true,
     siteElement: <Perspectives />,
-    subroutes: [
-      {
-        path: PATHS.PER_EFFECTIVE_COMMUNICATION,
-        label: "Effective Communication",
-        shortLabel: "Eff. Comm.",
-        showInNavigation: true,
-        siteElement: <EffectiveCommunication />,
-      },
-    ],
+    subroutes: unpackPerspectives(PERSPECTIVES),
   },
   {
     path: "*",
@@ -49,6 +44,20 @@ export const SiteRoutes: SiteRoute[] = [
     showInNavigation: false,
   },
 ];
+
+function unpackPerspectives(perspectivesData: PerspectiveData[]): SiteRoute[] {
+  return perspectivesData.map(
+    (data) =>
+      ({
+        label: data.label,
+        path: PATHS.PERSPECTIVES + data.subpath,
+        shortLabel: data.shortLabel,
+        showInNavigation: true,
+        depth: 1,
+        siteElement: <Perspective elements={data.elements} />,
+      }) as SiteRoute
+  );
+}
 
 export function unpackRoutes(
   routes: SiteRoute[],
