@@ -1,15 +1,11 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Box,
-  Divider,
-} from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import NavbarMenu from "components/Navbar/NavbarMenu/NavbarMenu";
+import ThemeSelector, {
+  THEME_SELECTOR_WIDTH,
+} from "./ThemeSelector/ThemeSelector";
 
 interface NavbarProps {
   currentTheme: string;
@@ -21,25 +17,33 @@ export default function Navbar({
   handleThemeChange,
 }: NavbarProps) {
   return (
-    <AppBar position="fixed" color="default" sx={{ boxShadow: "none" }}>
+    <AppBar
+      position="fixed"
+      color="default"
+      sx={{ boxShadow: "none", width: "100%" }}
+    >
       <Toolbar>
-        <NavbarMenu />
         <Box
-          sx={{ display: "flex", flexDirection: "row-reverse", width: "100%" }}
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "nowrap",
+            whiteSpace: "nowrap",
+          }}
         >
-          <FormControl variant="outlined">
-            <InputLabel>Theme</InputLabel>
-            <Select
-              size="small"
-              value={currentTheme}
-              onChange={(e) => handleThemeChange(e.target.value as string)}
-              label="Theme"
-            >
-              <MenuItem value="system">System</MenuItem>
-              <MenuItem value="light">Light</MenuItem>
-              <MenuItem value="dark">Dark</MenuItem>
-            </Select>
-          </FormControl>
+          <Box
+            sx={{
+              width: `calc(100% - ${THEME_SELECTOR_WIDTH} - 32px)`,
+            }}
+          >
+            <NavbarMenu />
+          </Box>
+          <ThemeSelector
+            currentTheme={currentTheme}
+            handleThemeChange={handleThemeChange}
+          />
         </Box>
       </Toolbar>
       <Divider />

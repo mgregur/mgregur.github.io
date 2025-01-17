@@ -7,6 +7,7 @@ import {
   PerspectiveData,
   PERSPECTIVES,
 } from "pages/Perspectives/perspectivesData";
+import DisclaimerPage from "pages/DisclaimerPage/DisclaimerPage";
 
 export const PATHS = {
   HOME: "/",
@@ -36,6 +37,12 @@ export const SiteRoutes: SiteRoute[] = [
     showInNavigation: true,
     siteElement: <Perspectives />,
     subroutes: unpackPerspectives(PERSPECTIVES),
+  },
+  {
+    path: "/disclaimer",
+    label: "Disclaimer",
+    showInNavigation: true,
+    siteElement: <DisclaimerPage />,
   },
   {
     path: "*",

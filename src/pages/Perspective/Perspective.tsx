@@ -70,6 +70,8 @@ function renderElement(element: PerspectiveElement) {
       return renderHeaderDivider();
     case "content":
       return renderContent(element);
+    case "content-gutter":
+      return renderContentGutter(element);
     case "bullet-list":
       return renderBulletList(element);
     case "content-with-bullet-list":
@@ -98,6 +100,14 @@ function renderHeaderDivider() {
 function renderContent(element: PerspectiveElement) {
   return (
     <Typography variant="body1" sx={{ mt: 2, px: 2 }}>
+      {element.text}
+    </Typography>
+  );
+}
+
+function renderContentGutter(element: PerspectiveElement) {
+  return (
+    <Typography variant="body1" sx={{ mt: 2, px: 2 }} gutterBottom>
       {element.text}
     </Typography>
   );

@@ -29,17 +29,10 @@ export default function Perspectives() {
         About this section
       </Typography>
       <Divider />
-      <Typography variant="body1" sx={{ mt: 2, px: 2 }} gutterBottom>
-        This section is where I share my personal thoughts and insights on
-        various topics in software development.
+      <Typography variant="body1" sx={{ mt: 2, px: 2 }}>
+        This section is where I share my personal opinions on various subjects
+        which I deem relevant in software development.
       </Typography>
-      <Typography variant="body1" sx={{ px: 2 }}>
-        My goal is to spark curiosity, challenge assumptions, and foster
-        discussions. Whether you agree, disagree, or have a different
-        perspective, I hope these posts inspire you to think critically and
-        share your own ideas.
-      </Typography>
-
       <HeaderDivider />
 
       <Typography variant="h4" gutterBottom>

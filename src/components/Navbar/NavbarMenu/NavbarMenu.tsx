@@ -8,9 +8,6 @@ import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { SiteRoutes, unpackRoutes } from "routes";
-import useWindowDimensions from "hooks/useWindowDimensions/useWindowDimensions";
-
-const SHORT_LABEL_BREAKPOINT = 400;
 
 export default function NavbarMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -31,19 +28,12 @@ export default function NavbarMenu() {
   const location = useLocation();
 
   const unpackedRoutes = useMemo(() => unpackRoutes(SiteRoutes), []);
-  const windowDimensions = useWindowDimensions();
-
-  const useShortLabels = useMemo(
-    () => windowDimensions.width <= SHORT_LABEL_BREAKPOINT,
-    [windowDimensions]
-  );
 
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
-        minWidth: useShortLabels ? "180px" : "260px",
       }}
     >
       <IconButton
@@ -54,8 +44,15 @@ export default function NavbarMenu() {
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h6">
-        {pathnameToLabel(location.pathname, useShortLabels)}
+      <Typography
+        variant="h6"
+        sx={{
+          textOverflow: "ellipsis",
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {pathnameToLabel(location.pathname)}
       </Typography>
       <Menu
         id="basic-menu"
@@ -83,7 +80,7 @@ export default function NavbarMenu() {
   );
 }
 
-function pathnameToLabel(pathname: string, useShortLabels: boolean): string {
+function pathnameToLabel(pathname: string): string {
   const route = unpackRoutes(SiteRoutes).find(
     (route) => route.path === pathname
   );
@@ -92,8 +89,5 @@ function pathnameToLabel(pathname: string, useShortLabels: boolean): string {
     return "Not Found";
   }
 
-  if (useShortLabels) {
-    return route.shortLabel ? route.shortLabel : route.label;
-  }
   return route.label;
 }

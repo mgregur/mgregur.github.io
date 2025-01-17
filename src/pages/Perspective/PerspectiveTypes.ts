@@ -3,6 +3,7 @@ export interface PerspectiveElement {
     | "header"
     | "header-divider"
     | "content"
+    | "content-gutter"
     | "bullet-list"
     | "content-with-bullet-list";
   bullets?: string[];

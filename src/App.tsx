@@ -9,6 +9,7 @@ import Navbar from "components/Navbar/Navbar";
 import { PaletteMode, ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { SiteRoutes, unpackRoutes } from "routes";
+import ScrollToTop from "components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [userSelectedTheme, setUserSelectedTheme] = useState<string>(() => {
@@ -76,6 +77,7 @@ function App() {
             color: "text.primary",
           }}
         >
+          <ScrollToTop />
           <Routes>
             {unpackedRoutes.map((siteRoute) => (
               <Route
