@@ -110,13 +110,11 @@ export const SummaryExperienceData: ExperienceEntryProps[] = [
     role: "Backend software engineer",
     period: "December 2022 - Present",
     bullets: [
-      "Planned and implemented migration of legacy system to modern cloud-native infrastructure.",
-      "Designed and implemented custom software packaging system, uses S3 storage.",
-      "Developed tool that utilizes remote device fleet to diagnose network issues.",
+      "Planned and executed migration of legacy system to modern cloud-native infrastructure. With zero downtime or incidents.",
+      "Developed CLI tools which enabled the team to quickly and easily interact with the system.",
+      "Reworked drivers for betting terminal peripheral devices, and implemented hot swapping and debouncing. Leading to a reduction of critical errors by over 50%.",
+      "Designed and implemented an error detection and alerting system for a fleet of remote devices.",
       "Main engineer for screen manager software product.",
-      "Reworked device drivers, leading to a reduction of critical errors by over 50%.",
-      "Implemented device hot swapping and debouncing.",
-      "Designed and implemented a proactive alerting system for a fleet of remote devices.",
     ],
   },
   {
